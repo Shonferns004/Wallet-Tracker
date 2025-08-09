@@ -4,8 +4,13 @@ import cors from "cors"
 import rateLimiter from "./middleware/rareLimiter.js";
 import transactionRouter from "./routes/transactionRoutes.js";
 import { initDB } from "./utils/connectDb.js";
+import job from "./config/cron.js";
 
 const app = express();
+
+if (process.env.NODE_ENV==="production") {
+  job.start()
+}
 
 app.use(express.json());
 app.use(cors())
