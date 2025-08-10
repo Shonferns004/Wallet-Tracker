@@ -1,11 +1,11 @@
 {
   "expo": {
-    "name": "twitter",
-    "slug": "twitter",
+    "name": "walletTracker",
+    "slug": "walletTracker",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./src/assets/images/icon.png",
-    "scheme": "twitter",
+    "scheme": "walletTracker",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
@@ -16,7 +16,8 @@
         "foregroundImage": "./src/assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "edgeToEdgeEnabled": true
+      "edgeToEdgeEnabled": true,
+      "package": "com.shawnferns004.walletTracker"
     },
     "web": {
       "bundler": "metro",
@@ -38,6 +39,13 @@
     ],
     "experiments": {
       "typedRoutes": true
-    }
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "2e966796-1c78-46a1-980b-36ada884db06"
+      }
+    },
+    "owner": "shawnferns004"
   }
 }
