@@ -4,6 +4,7 @@ import { tokenCache } from '@clerk/clerk-expo/token-cache'
 import "@/global.css";
 import SafeScreen from "@/src/components/SafeScreen";
 import { ClerkProvider } from '@clerk/clerk-expo'
+import { StatusBar } from "expo-status-bar";
 
 
 export default function RootLayout() {
@@ -15,6 +16,7 @@ export default function RootLayout() {
       <SafeScreen>
         <Slot />
       </SafeScreen>
+      <StatusBar style="dark" />
     </ClerkProvider>
   );
 }
