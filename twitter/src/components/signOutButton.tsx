@@ -1,6 +1,9 @@
 import { useClerk } from '@clerk/clerk-expo'
 import * as Linking from 'expo-linking'
 import { Text, TouchableOpacity } from 'react-native'
+import AntDesign from '@expo/vector-icons/AntDesign';
+import { styles } from '../assets/styles/home.styles';
+import { COLORS } from '../constants/colors';
 
 export const SignOutButton = () => {
   // Use `useClerk()` to access the `signOut()` function
@@ -17,8 +20,8 @@ export const SignOutButton = () => {
     }
   }
   return (
-    <TouchableOpacity onPress={handleSignOut}>
-      <Text>Sign out</Text>
+    <TouchableOpacity style={styles.logoutButton} onPress={handleSignOut}>
+      <AntDesign name="poweroff" size={20} color={COLORS.text} />
     </TouchableOpacity>
   )
 }
