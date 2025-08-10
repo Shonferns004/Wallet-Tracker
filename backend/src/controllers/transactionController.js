@@ -35,8 +35,6 @@ export const getTransaction = async (req, res) => {
       ORDER BY created_at DESC
     `;
 
-    console.log("Query result:", transaction);
-
     res.status(200).json(transaction);
   } catch (error) {
     console.error("Error fetching transaction:", error);
@@ -48,7 +46,7 @@ export const deleteTransaction = async(req,res)=>{
   try {
     const { id } = req.params
 
-    if (isNaN(parseInt(id))) {
+if (!Number.isInteger(Number(id))) {
       return res.status(400).json({
         message: "Invalid transactions ID"
       })
@@ -60,7 +58,7 @@ export const deleteTransaction = async(req,res)=>{
 
     if (result.length ===0) {
       return res.status(404).json({
-        message: "Transaction not found"
+        message: "transaction not found"
       })
     }
     res.status(200).json({
